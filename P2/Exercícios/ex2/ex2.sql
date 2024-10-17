@@ -1,3 +1,7 @@
+create database ex2;
+
+use ex2;
+
 create table tamanho (
 	idTamanho integer not null,
     nomeTamanho varchar(45),
@@ -14,6 +18,12 @@ constraint fk_pizza_idTamanho foreign key (idTamanho)
 	references tamanho(idTamanho)
 );
 
+create table ingrediente (
+	idIngrediente integer not null,
+    nomeIngrediente varchar(45) not null,
+constraint pk_ingrediente primary key (idIngrediente)
+);
+
 create table preparo (
 	idPreparo integer not null,
     idIngrediente integer not null,
@@ -26,10 +36,4 @@ constraint fk_preparo_idPizza foreign key (idPizza)
 	references pizza(idPizza),
 constraint fk_preparo_idTamanho foreign key (idTamanho)
 	references tamanho(idTamanho)
-);
-
-create table ingrediente (
-	idIngrediente integer not null,
-    nomeIngrediente varchar(45) not null,
-constraint pk_ingrediente primary key (idIngrediente)
 );
