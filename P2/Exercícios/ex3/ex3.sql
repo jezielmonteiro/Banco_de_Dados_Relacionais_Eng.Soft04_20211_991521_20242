@@ -1,3 +1,7 @@
+create database ex3;
+
+use ex3;
+
 create table companhia (
 	idCompanhia integer not null,
     nomeCompanhia varchar(45) not null,
@@ -39,3 +43,5 @@ constraint fk_trabalha_idGerente foreign key (idGerente)
 constraint fk_trabalha_idCompanhia foreign key (idCompanhia)
 	references companhia(idCompanhia)
 );
+
+
